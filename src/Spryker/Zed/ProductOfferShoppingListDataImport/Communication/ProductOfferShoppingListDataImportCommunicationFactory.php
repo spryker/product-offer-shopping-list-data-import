@@ -11,9 +11,7 @@ use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
 
 /**
  * @method \Spryker\Zed\ProductOfferShoppingListDataImport\ProductOfferShoppingListDataImportConfig getConfig()
- * @method \Spryker\Zed\ProductOfferShoppingListDataImport\Persistence\ProductOfferShoppingListDataImportRepositoryInterface getRepository()
  * @method \Spryker\Zed\ProductOfferShoppingListDataImport\Business\ProductOfferShoppingListDataImportFacadeInterface getFacade()
- * @method \Spryker\Zed\ProductOfferShoppingListDataImport\Persistence\ProductOfferShoppingListDataImportEntityManagerInterface getEntityManager()
  */
 class ProductOfferShoppingListDataImportCommunicationFactory extends AbstractCommunicationFactory
 {
