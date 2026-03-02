@@ -22,11 +22,6 @@ use Spryker\Zed\ProductOfferShoppingListDataImport\ProductOfferShoppingListDataI
  */
 class ProductOfferShoppingListDataImportBusinessFactory extends DataImportBusinessFactory
 {
-    /**
-     * @param \Generated\Shared\Transfer\DataImporterConfigurationTransfer|null $dataImporterConfigurationTransfer
-     *
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getProductOfferShoppingListItemDataImporter(
         ?DataImporterConfigurationTransfer $dataImporterConfigurationTransfer = null
     ): DataImporterInterface {
@@ -45,9 +40,6 @@ class ProductOfferShoppingListDataImportBusinessFactory extends DataImportBusine
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createProductOfferShoppingListItemDataImportWriterStep(): DataImportStepInterface
     {
         return new ProductOfferShoppingListItemDataImportWriterStep(
@@ -55,9 +47,6 @@ class ProductOfferShoppingListDataImportBusinessFactory extends DataImportBusine
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductOfferShoppingListDataImport\Communication\Dependency\Facade\ProductOfferShoppingListDataImportToProductOfferFacadeInterface
-     */
     public function getProductOfferFacade(): ProductOfferShoppingListDataImportToProductOfferFacadeInterface
     {
         return $this->getProvidedDependency(ProductOfferShoppingListDataImportDependencyProvider::FACADE_PRODUCT_OFFER);

@@ -24,9 +24,6 @@ class ProductOfferShoppingListItemDataImportWriterStep implements DataImportStep
   */
     protected $productOfferFacade;
 
-    /**
-     * @param \Spryker\Zed\ProductOfferShoppingListDataImport\Communication\Dependency\Facade\ProductOfferShoppingListDataImportToProductOfferFacadeInterface $productOfferFacade
-     */
     public function __construct(ProductOfferShoppingListDataImportToProductOfferFacadeInterface $productOfferFacade)
     {
         $this->productOfferFacade = $productOfferFacade;
@@ -57,9 +54,6 @@ class ProductOfferShoppingListItemDataImportWriterStep implements DataImportStep
             ->save();
     }
 
-    /**
-     * @return \Orm\Zed\ShoppingList\Persistence\SpyShoppingListItemQuery
-     */
     protected function createShoppingListItemQuery(): SpyShoppingListItemQuery
     {
         return SpyShoppingListItemQuery::create();

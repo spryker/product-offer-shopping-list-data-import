@@ -34,54 +34,34 @@ class ProductOfferShoppingListDataImportCommunicationTester extends Actor
 {
     use _generated\ProductOfferShoppingListDataImportCommunicationTesterActions;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function deleteShoppingList(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer
     {
         return $this->getShoppingListFacade()->removeShoppingList($shoppingListTransfer);
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingList\Business\ShoppingListFacadeInterface
-     */
     public function getShoppingListFacade(): ShoppingListFacadeInterface
     {
         return $this->getLocator()->shoppingList()->facade();
     }
 
-    /**
-     * @return void
-     */
     public function ensureShoppingListProductOfferDatabaseTableIsEmpty(): void
     {
         $this->getShoppingListItemQuery()
             ->deleteAll();
     }
 
-    /**
-     * @return void
-     */
     public function assertDatabaseTableIsEmpty(): void
     {
         $shoppingListItemWithProductOfferReferencesQuery = $this->getShoppingListItemQuery();
         $this->assertCount(0, $shoppingListItemWithProductOfferReferencesQuery, 'Found at least one entry in the database table but database table was expected to be empty.');
     }
 
-    /**
-     * @return void
-     */
     public function assertShoppingListProductOfferDatabaseTableContainsData(): void
     {
         $shoppingListItemWithProductOfferReferencesQuery = $this->getShoppingListItemQuery();
         $this->assertTrue(($shoppingListItemWithProductOfferReferencesQuery->count() > 0), 'Expected at least one entry in the database table but database table is empty.');
     }
 
-    /**
-     * @return \Orm\Zed\ShoppingList\Persistence\SpyShoppingListItemQuery
-     */
     protected function getShoppingListItemQuery(): SpyShoppingListItemQuery
     {
         return SpyShoppingListItemQuery::create()

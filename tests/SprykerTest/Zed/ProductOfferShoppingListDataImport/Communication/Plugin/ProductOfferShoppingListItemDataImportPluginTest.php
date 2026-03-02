@@ -44,9 +44,6 @@ class ProductOfferShoppingListItemDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testImportImportsShoppingListItem(): void
     {
         // Arrange
@@ -86,9 +83,6 @@ class ProductOfferShoppingListItemDataImportPluginTest extends Unit
         $this->tester->assertShoppingListProductOfferDatabaseTableContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         $productOfferShoppingListItemDataImportPlugin = new ProductOfferShoppingListItemDataImportPlugin();
