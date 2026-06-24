@@ -13,6 +13,8 @@ use Spryker\Zed\DataImport\DataImportConfig;
 class ProductOfferShoppingListDataImportConfig extends DataImportConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const IMPORT_TYPE_PRODUCT_OFFER_SHOPPING_LIST_ITEM = 'product-offer-shopping-list-item';
